@@ -39,12 +39,9 @@ https://www.kaggle.com/sakshigoyal7/credit-card-customers. Le dataset provient d
 Cet ensemble de données est composé de 10 000 clients mentionnant leur âge, leur salaire, leur statut marital, leur limite de carte de crédit, leur catégorie de carte de crédit, etc. Il y a près de 18 caractéristiques. Seuls 16,07% des clients ont changé de banque,  l'entrainement du modèle est donc plus difficile.
 
 ## Livrables : 
+- présentation (15 min)
+- questions (5 min)
+
+## Livrables : 
 - script (R ou python)
-- présentation
-
-
-
-
-
-
-
+- présentation (pdf)
