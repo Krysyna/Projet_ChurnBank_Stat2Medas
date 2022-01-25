@@ -30,10 +30,12 @@ Pour l'evaluation de ce module 4 cas d'usage sont proposés :
   -  Jeux d’apprentissage : 471 lignes / 35 variables
 
 Notre choix s'est porté sur **"Prédire la résiliation d’un client bancaire"**
-  - **Objectif** 
-Le directeur d'unebanque souhaite predire quels clients de sa banque vont s'en aller afin de réaliser des actions pour les retenir. En effetDans une entreprise, le coût pour obtenir un nouveau client est généralement beaucoup plus élevé que ce qu'il faut pour conserver un client existant. À cette fin, l'objectif principal sera de prévoir le plus grand nombre de départs potentiels afin de permettre au directeur de proposer de manière proactive de meilleures offres aux clients.
-    - **Les données** :   
-  https://www.kaggle.com/sakshigoyal7/credit-card-customers. Le dataset provient de https://leaps.analyttica.com/home. 
+- **Objectifs** 
+Le directeur d'une banque souhaite predire quels clients de sa banque vont s'en aller afin de réaliser des actions pour les retenir. En effetDans une entreprise, le coût pour obtenir un nouveau client est généralement beaucoup plus élevé que ce qu'il faut pour conserver un client existant. À cette fin, l'objectif principal sera de prévoir le plus grand nombre de départs potentiels afin de permettre au directeur de proposer de manière proactive de meilleures offres aux clients.
+
+- **Les données**  
+https://www.kaggle.com/sakshigoyal7/credit-card-customers. Le dataset provient de https://leaps.analyttica.com/home. 
+
 Cet ensemble de données est composé de 10 000 clients mentionnant leur âge, leur salaire, leur statut marital, leur limite de carte de crédit, leur catégorie de carte de crédit, etc. Il y a près de 18 caractéristiques.Seuls 16,07% des clients ont changé de banque, c'est pourquoi l'entrainement du modèle est plus            difficile.
 
    
