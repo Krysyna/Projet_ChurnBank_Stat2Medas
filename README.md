@@ -17,17 +17,17 @@ Le langage utilisé est **R** avec l'éditeur *R-studio* depuis la plateforme **
 
 Pour l'evaluation de ce module 4 cas d'usage sont proposés :
 - Prédire la résiliation d’un client bancaires :
--   Kaggle : https://www.kaggle.com/sakshigoyal7/credit-card-customers
--   Jeux d’apprentissage : 10 K lignes / 23 colonnes
+  -   Kaggle : https://www.kaggle.com/sakshigoyal7/credit-card-customers
+  -   Jeux d’apprentissage : 10 K lignes / 23 colonnes
 - Prédire se salaire d’un joueur de NFL :
--   Kaggle : https://www.kaggle.com/camnugent/predict-nhl-player-salaries
--   Jeux d’apprentissage : 613 K lignes / 154 colonnes
+  -   Kaggle : https://www.kaggle.com/camnugent/predict-nhl-player-salaries
+  -   Jeux d’apprentissage : 613 K lignes / 154 colonnes
 - Détection de fausse annonce de travail :
--   Challenge kaggle en cours : https://www.kaggle.com/shivamb/real-or-fake-fake-jobposting-prediction
--   Jeux d’apprentissage : 18K lignes / 18 variables
+  -   Challenge kaggle en cours : https://www.kaggle.com/shivamb/real-or-fake-fake-jobposting-prediction
+  -   Jeux d’apprentissage : 18K lignes / 18 variables
  - Prédire la démission d’une personne chez IBM :
- -  https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset
- -  Jeux d’apprentissage : 471 lignes / 35 variables
+  -  https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset
+  -  Jeux d’apprentissage : 471 lignes / 35 variables
 
 Notre choix s'est porté sur **"Prédire la résiliation d’un client bancaire"**
   - **Objectif** 
