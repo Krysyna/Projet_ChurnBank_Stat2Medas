@@ -16,8 +16,8 @@ library()
 # ```{r}
 # fonctions du projet medas
 source('script/functions.R')
+source('script/load_libraries_function.R')
 load_libraries()
-
 ##################################################################################-
 # 2 - Import des données ----
 ##################################################################################-
