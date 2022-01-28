@@ -1,31 +1,37 @@
 # Chargement des librairies du projet
 
-# declaration de la fonction
+## declaration de la fonction
 load_libraries <- function()
 # debut de la fonction
   {
-  # data.frame amélioré
-  if ("data.table" %in% rownames(installed.packages()) == FALSE) { install.packages("data.table", dependencies=TRUE)};library(data.table)
+  # data.table : data.frame amélioré
+  # if ("data.table" %in% rownames(installed.packages()) == FALSE) { install.packages("data.table", dependencies=TRUE)};library(data.table)
+  
+  remove.packages("data.table")
+  install.packages("data.table", type = "source",repos = "https://Rdatatable.gitlab.io/data.table")
   # gestion des dates
+  
   if ("lubridate" %in% rownames(installed.packages()) == FALSE) {install.packages("lubridate", dependencies=TRUE)};library(lubridate)
-  # R Companion to Applied Regression (Functions to Accompany J. Fox and S. Weisberg, AThird Edition, Sage, 2019.)
-  if ("car" %in% rownames(installed.packages()) == FALSE) {install.packages("car", dependencies=TRUE)};library(car)
   # Several functions are available for calculating the most widely used effect sizes (ES),
   # along with their variances, confidence intervals and p-values
-  if ("compute.es" %in% rownames(installed.packages()) == FALSE) {install.packages("compute.es", dependencies=TRUE)};library(compute.es)
-  # Graphical and tabular effect displays, e.g., of interactions, for various statistical models with linear predictors.
-  if ("effects" %in% rownames(installed.packages()) == FALSE) {install.packages("effects", dependencies=TRUE)};library(effects)
+  if ("compute.es" %in% rownames(installed.packages()) == FALSE) {install.packages("compute.es")};library(compute.es)
+ 
   # Create Elegant Data Visualisations Using the Grammar of Graphics
-  if ("ggplot2" %in% rownames(installed.packages()) == FALSE) {install.packages("ggplot2", dependencies=TRUE)};library(ggplot2)
+  if ("ggplot2" %in% rownames(installed.packages()) == FALSE) {install.packages("ggplot2")};library(ggplot2)
+  
   # Simultaneous Inference in General Parametric Models
   if ("multcomp" %in% rownames(installed.packages()) == FALSE) {install.packages("multcomp" ,dependencies=TRUE)};library(multcomp)
+  
   # Package for Analysis of Space-Time Ecological Series
   if ("pastecs" %in% rownames(installed.packages()) == FALSE) {install.packages("pastecs", dependencies=TRUE)};library(pastecs)
+  
   # A Collection of Robust Statistical Methods
   if ("WRS2" %in% rownames(installed.packages()) == FALSE) {install.packages("WRS2", dependencies=TRUE)};library(WRS2)
+  
   # set of packages that work in harmony because they share common data representations and 'API' design.
   if ("tidyverse" %in% rownames(installed.packages()) == FALSE) {install.packages("tidyverse", dependencies=TRUE)};library(tidyverse)
   if ("dplyr" %in% rownames(installed.packages()) == FALSE) {install.packages("dplyr", dependencies=TRUE)};library(dplyr)
+  
   # Regression subset selection, including exhaustive search.
   if ("leaps" %in% rownames(installed.packages()) == FALSE) {install.packages("leaps", dependencies=TRUE)};library(leaps)
   # Graphes de corrélation
@@ -66,6 +72,10 @@ load_libraries <- function()
   # puis utiliser dplyr::select() pour utiliser le select() de la librairie dplyr.
   # car sinon par Par defaut c'est le select de la  la librairie MASS
   
-  #source('http://www.sthda.com/upload/rquery_t_test.r')
-  source('script/fonction_rquery.t.test.R')
+  # /!\ to do /!\ 
+  # R Companion to Applied Regression (Functions to Accompany J. Fox and S. Weisberg, AThird Edition, Sage, 2019.)
+  # if ("car" %in% rownames(installed.packages()) == FALSE) {install.packages("car", dependencies = "Imports")};library(car)
+  # Graphical and tabular effect displays, e.g., of interactions, for various statistical models with linear predictors.
+  if ("effects" %in% rownames(installed.packages()) == FALSE) {install.packages("effects")};library(effects)
+
 }

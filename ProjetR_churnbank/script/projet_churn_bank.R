@@ -17,6 +17,8 @@ library()
 # fonctions du projet medas
 source('script/functions.R')
 source('script/load_libraries_function.R')
+
+source('script/fonction_rquery.t.test.R')
 load_libraries()
 ##################################################################################-
 # 2 - Import des données ----

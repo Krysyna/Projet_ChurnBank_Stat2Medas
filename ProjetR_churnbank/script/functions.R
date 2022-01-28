@@ -1,14 +1,10 @@
-
-
-
 # stat descriptives
 desc_stat <- function(data, data_stay, data_quit, source_var, target_var) {
-
+    
     message(paste("summary de data_stay$", source_var, sep=""))
     print(summary(data_stay[[source_var]]))
     message(paste("variance de data_stay", source_var))
     print(var(data_stay[[source_var]]))
-
     message(paste("summary de data_quit$", source_var, sep=""))
     print(summary(data_quit[[source_var]]))
     message(paste("variance de data_quit", source_var))
@@ -17,13 +13,14 @@ desc_stat <- function(data, data_stay, data_quit, source_var, target_var) {
     # déclaration en variable globale nécessaire pour ggplotify::as.grob(~hist(...))
     source_var <<- source_var
     target_var <<- target_var
+    
     # analyse visuelle
-    # histogramme de chaque population
+      # histogramme de chaque population
     graphA <- ggplotify::as.grob(~hist(data_stay[[source_var]], xlab=source_var, ylab=target_var, main = paste("[STAYED] Histo of", source_var)))
     graphB <- ggplotify::as.grob(~hist(data_quit[[source_var]], xlab=source_var, ylab=target_var, main = paste("[QUIT] Histo of" , source_var)))
-    # comparaison des dispersions
+      # comparaison des dispersions
     graphC <- ggplotify::as.grob(~boxplot(data[[source_var]] ~ data[[target_var]], xlab=source_var, ylab=target_var))
-    # plot de variable source par variable cible
+      # plot de variable source par variable cible
     graphD <- ggplot(data, aes(x = get(source_var), fill = get(target_var))) +
         xlab(source_var)+
         geom_density(alpha = 0.7) +
@@ -39,6 +36,7 @@ desc_stat <- function(data, data_stay, data_quit, source_var, target_var) {
     #     labs(title="Distribution of Total Transaction Count by Customer type", x="Total Transaction Count", y="Count")
     cowplot::plot_grid(graphA, graphB, graphC, graphD, labels=c("A", "B", "C", "D"), ncol = 2, nrow = 2)
 }
+
 # Tests de student et de wilcoxon
 test_stat <- function(data_reg_stay, data_reg_quit, source_var, wording) {
     message("Test de student")

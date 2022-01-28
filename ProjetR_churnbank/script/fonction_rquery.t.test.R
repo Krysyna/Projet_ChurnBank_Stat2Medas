@@ -1,6 +1,9 @@
 #++++++++++++++++++++++++
 # rquery.t.test
 # https://support.minitab.com/fr-fr/minitab/18/help-and-how-to/statistics/basic-statistics/how-to/2-sample-t/interpret-the-results/key-results/#:~:text=En%20g%C3%A9n%C3%A9ral%2C%20un%20seuil%20de,tort%20qu'une%20diff%C3%A9rence%20existe.&text=Si%20la%20valeur%20de%20p,pouvez%20rejeter%20l'hypoth%C3%A8se%20nulle.
+# source('http://www.sthda.com/upload/rquery_t_test.r')
+
+
 #+++++++++++++++++++++++
 # Description : Performs one or two samples t-test
 # x : a (non-empty) numeric vector of data values.
