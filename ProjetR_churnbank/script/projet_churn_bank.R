@@ -1,11 +1,108 @@
+# GESTION DES PACKAGES : renv (Reproducible ENVironments)
+# https://rstudio.github.io/renv/articles/renv.html
+
+# COMMENT UTILISER RENV #
+# 00-installer le package renv 
+  # install.packages("renv")
+# 01-appel de la librairie (detachement)
+  # library(renv)
+# 02-renv::init() pour initialiser un nouvel environnement local du projet avec une bibliothèque R privée
+# 03-renv::snapshot() pour sauvegarder l'état de la bibliothèque du projet dans le fichier de verrouillage (appelé renv.lock),
+# 04-renv::restore() pour revenir à l'état précédent tel qu'il est encodé dans le fichier de verrouillage si vos tentatives de mise à jour des paquets ont introduit de nouveaux problèmes.
+# 05-renv::status() permet de vérifier que votre environnement de packages utilisé à un moment T correspond à celui enregistré dans le fichier lock. 
+
+# installation et appel du package renv
+# if ("renv" %in% rownames(installed.packages()) == FALSE) {install.packages("renv")};library(renv)
+
+# Initialisation de renv (au début du projet)
+# renv::init()
+
+# statut de la librairie privée (lockfile)
+renv::status()
+
+
+######### installation et attachement des packages utiles au projet #########
+# data.table : data.frame amélioré
+# installer le package date.table depuis la source (https://Rdatatable.gitlab.io/data.table) :
+# remove.packages("data.table")
+# install.packages("data.table", type = "source",repos = "https://Rdatatable.gitlab.io/data.table")
+# gestion des dates
+if ("lubridate" %in% rownames(installed.packages()) == FALSE) {install.packages("lubridate", dependencies=TRUE)};library(lubridate)
+# Several functions are available for calculating the most widely used effect sizes (ES),
+# along with their variances, confidence intervals and p-values
+if ("compute.es" %in% rownames(installed.packages()) == FALSE) {install.packages("compute.es")};library(compute.es)
+# set of packages that work in harmony because they share common data representations and 'API' design.
+if ("tidyverse" %in% rownames(installed.packages()) == FALSE) {install.packages("tidyverse", dependencies=TRUE)};library(tidyverse)
+if ("dplyr" %in% rownames(installed.packages()) == FALSE) {install.packages("dplyr", dependencies=TRUE)};library(dplyr)
+# Create Elegant Data Visualisations Using the Grammar of Graphics
+if ("ggplot2" %in% rownames(installed.packages()) == FALSE) {install.packages("ggplot2")};library(ggplot2)
+# Graphes de corrélation
+if ("corrplot" %in% rownames(installed.packages()) == FALSE) {install.packages("corrplot")};
+library(corrplot)
+# Tools for reordering and modifying factor levels  with Categorical Variables (Factors)
+if("forcats" %in% rownames(installed.packages()) == FALSE) {install.packages("forcats")};
+library(forcats)
+if("skimr" %in% rownames(installed.packages()) == FALSE) {install.packages("skimr")}
+library(skimr)
+# Surrogate Residuals for Ordinal and General Regression Models
+install.packages("sure")
+library(sure)
+# Fonctions diverses pour les graphiques "Grid"(grilles)
+install.packages("gridExtra")
+library(gridExtra)
+if ("cowplot" %in% rownames(installed.packages()) == FALSE) {install.packages("cowplot", dependencies=TRUE)};library(cowplot)
+if ("ggplotify" %in% rownames(installed.packages()) == FALSE) {install.packages("ggplotify", dependencies=TRUE)};library(ggplotify)
+if ("caret" %in% rownames(installed.packages()) == FALSE) {install.packages("caret", dependencies=TRUE)};library(caret)
+if ("pROC" %in% rownames(installed.packages()) == FALSE) {install.packages("pROC", dependencies=TRUE)};library(pROC)
+if ("ROCR" %in% rownames(installed.packages()) == FALSE) {install.packages("ROCR", dependencies=TRUE)};library(ROCR)
+if ("correlationfunnel" %in% rownames(installed.packages()) == FALSE) {install.packages("correlationfunnel", dependencies=TRUE)};library(correlationfunnel)
+if ("ggalluvial" %in% rownames(installed.packages()) == FALSE) {install.packages("ggalluvial", dependencies=TRUE)};library(ggalluvial)
+if ("tidymodels" %in% rownames(installed.packages()) == FALSE) {install.packages("tidymodels", dependencies=TRUE)};library(tidymodels)
+if ("tibble" %in% rownames(installed.packages()) == FALSE) {install.packages("tibble", dependencies=TRUE)};library(tibble)
+if ("broom.helpers" %in% rownames(installed.packages()) == FALSE) {install.packages("broom.helpers", dependencies=TRUE)};library(broom.helpers)
+if ("GGally" %in% rownames(installed.packages()) == FALSE) {install.packages("GGally", dependencies=TRUE)};library(GGally)
+
+renv::snapshot()
+# CONFLIT de select() entre les deux librairies MASS et dplyr
+# par Par defaut c'est le select de la librairie MASS il faut donc preciser dplyr::select()
+# x MASS::select() masks dplyr::select() => Use tidymodels_prefer() to resolve common conflicts ?
+require(MASS)
+require(dplyr)
+# ?tidymodels_prefer()
+---
+
+--
+# /!\ to do /!\ 
+# R Companion to Applied Regression (Functions to Accompany J. Fox and S. Weisberg, AThird Edition, Sage, 2019.)
+if ("car" %in% rownames(installed.packages()) == FALSE) {install.packages("car", dependencies = "Imports")};library(car)
+# Graphical and tabular effect displays, e.g., of interactions, for various statistical models with linear predictors.
+if ("effects" %in% rownames(installed.packages()) == FALSE) {install.packages("effects")};library(effects)
+# Simultaneous Inference in General Parametric Models
+if ("multcomp" %in% rownames(installed.packages()) == FALSE) {install.packages("multcomp" )};library(multcomp)
+if ("minqa" %in% rownames(installed.packages()) == FALSE) {install.packages("minqa")};library(minqa)
+if ("pastecs" %in% rownames(installed.packages()) == FALSE) {install.packages("pastecs", dependencies=TRUE)};library(pastecs)
+# Package for Analysis of Space-Time Ecological Series
+# Regression subset selection, including exhaustive search.
+if ("leaps" %in% rownames(installed.packages()) == FALSE) {install.packages("leaps", dependencies=TRUE)};library(leaps)
+# A Collection of Robust Statistical Methods
+if ("WRS2" %in% rownames(installed.packages()) == FALSE) {install.packages("WRS2", dependencies=TRUE)};library(WRS2)
+# lib de graphes avancés
+if ("highcharter" %in% rownames(installed.packages()) == FALSE) {install.packages("highcharter")};library(highcharter)
+# créer des graphiques prêts à être publiés
+if("ggpubr" %in% rownames(installed.packages()) == FALSE) {install.packages("ggpubr")};library(ggpubr)
+# Extraire et visualiser les résultats d’analyses de données multivariées
+if("factoextra" %in% rownames(installed.packages()) == FALSE) {install.packages("factoextra")};library(factoextra)
+if ("questionr" %in% rownames(installed.packages()) == FALSE) {install.packages("questionr", dependencies=TRUE)};library(questionr)
+
+# -- solutions possibles
+#  installer une librairie en local (dans ce cas le package est téléchargé et present sur le disque dur du pc)
+install.packages("chemin/vers/mvpart_1.6-2.tar.gz", repos = NULL, type = "source")
+
+#--------------------------- LE SCRIPT --------------------
 # Objectif: Prédire la résiliation d’un client bancaire
 # Kaggle: https://www.kaggle.com/sakshigoyal7/credit-card-customers
 # Jeux d’apprentissage : 10 K lignes / 23 colonnes
-
 # https://www.kaggle.com/josephchan524/bankchurnersclassifier-recall-97-accuracy-95
-
-# dernier commit intégré hors moi : analyses visuels + comparaison de moyenne des variables quantis - 29e6d29
-# Krysyna committed 11 days ago - 31 mars 2021 - 00h20
 
 # Pour voir les librairies installées
 library()
@@ -13,13 +110,14 @@ library()
 ##################################################################################-
 # 1 - Chargement des librairies ----
 ##################################################################################-
-# ```{r}
+
 # fonctions du projet medas
 source('script/functions.R')
-source('script/load_libraries_function.R')
-
+# source('script/load_libraries_function.R')
 source('script/fonction_rquery.t.test.R')
+# fonction pour charger les librairies du projet :
 load_libraries()
+
 ##################################################################################-
 # 2 - Import des données ----
 ##################################################################################-
